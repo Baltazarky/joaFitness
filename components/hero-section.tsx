@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button"
 import { MessageCircle, ChevronDown } from "lucide-react"
 import Image from "next/image"
 
-const WHATSAPP_LINK = "https://wa.me/5493425953943?text=Hola%20Joaquin!%20Me%20interesan%20tus%20planes%20de%20entrenamiento"
+export function HeroSection({ content }: { content: Record<string, string> }) {
+  const whatsappLink = `https://wa.me/${content.whatsapp_phone}?text=${content.whatsapp_message}`
 
-export function HeroSection() {
   return (
     <section
       id="inicio"
@@ -33,17 +33,17 @@ export function HeroSection() {
           {/* Pill badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-300 text-sm font-medium mb-8 animate-fade-in-up">
             <span className="text-sm">🔥</span>
-            <span>+500 clientes ya entrenan conmigo</span>
+            <span>{content.hero_pill_badge}</span>
           </div>
 
           {/* H1 */}
           <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white leading-[0.85] tracking-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-            JOA FIT
+            {content.hero_headline}
           </h1>
 
           {/* Subheadline */}
           <p className="text-white/80 text-lg md:text-xl max-w-xl mb-10 animate-fade-in-up leading-relaxed" style={{ animationDelay: "0.2s" }}>
-            Asesorías online de entrenamiento y nutrición. Dejá de improvisar en el gym, seguí un plan probado y empezá a ver resultados reales.
+            {content.hero_subheadline}
           </p>
 
           {/* 2 CTAs */}
@@ -56,7 +56,7 @@ export function HeroSection() {
               Ver Planes
             </Button>
             <a
-              href={WHATSAPP_LINK}
+              href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -75,15 +75,15 @@ export function HeroSection() {
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-white/50 text-sm animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
             <span className="flex items-center gap-1.5">
               <span className="w-1 h-1 rounded-full bg-amber-400" />
-              Sin permanencia
+              {content.hero_trust_1}
             </span>
             <span className="flex items-center gap-1.5">
               <span className="w-1 h-1 rounded-full bg-amber-400" />
-              Primera consulta gratis
+              {content.hero_trust_2}
             </span>
             <span className="flex items-center gap-1.5">
               <span className="w-1 h-1 rounded-full bg-amber-400" />
-              100% Online
+              {content.hero_trust_3}
             </span>
           </div>
         </div>

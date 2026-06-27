@@ -8,20 +8,25 @@ import { AboutSection } from "@/components/about-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import { WhatsAppFloating } from "@/components/whatsapp-floating"
+import { getAllContent } from "@/lib/content"
 
-export default function HomePage() {
+export const dynamic = "force-dynamic"
+
+export default async function HomePage() {
+  const content = await getAllContent()
+
   return (
     <main className="bg-black text-white">
       <Navbar />
-      <HeroSection />
-      <StatsBar />
+      <HeroSection content={content} />
+      <StatsBar content={content} />
       <CoachingPlansSection />
       <TestimonialsSection />
-      <TransformationSection />
-      <AboutSection />
-      <ContactSection />
-      <Footer />
-      <WhatsAppFloating />
+      <TransformationSection content={content} />
+      <AboutSection content={content} />
+      <ContactSection content={content} />
+      <Footer content={content} />
+      <WhatsAppFloating content={content} />
     </main>
   )
 }

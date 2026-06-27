@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 
-export function AboutSection() {
+export function AboutSection({ content }: { content: Record<string, string> }) {
   return (
     <section id="sobre-mi" className="py-20 md:py-32 bg-zinc-950">
       <div className="container mx-auto px-4 md:px-8">
@@ -31,34 +31,30 @@ export function AboutSection() {
             {/* Texto + Quotes */}
             <div>
               <p className="text-gray-300 leading-relaxed text-lg mb-6">
-                <strong className="text-white">Soy Joaquin, un apasionado por el entrenamiento.</strong>
+                <strong className="text-white">{content.about_bio_1}</strong>
               </p>
               <p className="text-gray-400 leading-relaxed mb-8">
-                Mi misión es acompañarte en tu transformación. Estoy aquí para ayudarte a convertir miedos, complejos e
-                inseguridades en confianza, fuerza y amor propio. Porque cuidarte a ti mismo no es solo el objetivo, sino
-                aprender durante el camino a cómo hacerlo.
+                {content.about_bio_2}
               </p>
               <p className="text-gray-400 leading-relaxed mb-10">
-                Con años de experiencia en entrenamiento personal y nutrición deportiva, mi enfoque se basa en la
-                simplicidad y resultados reales. Cada plan está diseñado específicamente para ti.
+                {content.about_bio_3}
               </p>
 
               {/* Quote blocks - filosofía */}
               <div className="space-y-5">
                 <div className="border-l-2 border-amber-500 pl-5">
                   <p className="text-white/80 text-base leading-relaxed italic">
-                    &ldquo;La consistencia es el verdadero superpoder. No se trata de motivación, se trata de identidad.&rdquo;
+                    &ldquo;{content.about_quote_1}&rdquo;
                   </p>
                 </div>
                 <div className="border-l-2 border-amber-500 pl-5">
                   <p className="text-white/80 text-base leading-relaxed italic">
-                    &ldquo;Entrenar debería ser simple, no complicado. Mi enfoque es crear un plan que funcione para vos y
-                    hacerlo lo más fácil posible de seguir.&rdquo;
+                    &ldquo;{content.about_quote_2}&rdquo;
                   </p>
                 </div>
                 <div className="border-l-2 border-amber-500 pl-5">
                   <p className="text-white/80 text-base leading-relaxed italic">
-                    &ldquo;Construir el cuerpo correcto empieza por ordenar la vida.&rdquo;
+                    &ldquo;{content.about_quote_3}&rdquo;
                   </p>
                 </div>
               </div>

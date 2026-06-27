@@ -2,13 +2,12 @@
 
 import { MessageCircle } from "lucide-react"
 
-const PHONE = "5493425953943"
-const MESSAGE = "Hola%20Joaquin!%20Me%20interesan%20tus%20planes%20de%20entrenamiento"
+export function WhatsAppFloating({ content }: { content: Record<string, string> }) {
+  const whatsappLink = `https://wa.me/${content.whatsapp_phone}?text=${content.whatsapp_message}`
 
-export function WhatsAppFloating() {
   return (
     <a
-      href={`https://wa.me/${PHONE}?text=${MESSAGE}`}
+      href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 group"

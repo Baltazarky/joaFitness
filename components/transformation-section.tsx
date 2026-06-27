@@ -12,7 +12,7 @@ const slides = [
   { id: 5, label: "Transformación 5" },
 ]
 
-export function TransformationSection() {
+export function TransformationSection({ content }: { content: Record<string, string> }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center" })
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([])

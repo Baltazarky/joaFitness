@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea"
 
 type FormStatus = "idle" | "loading" | "success" | "error"
 
-export function ContactSection() {
+export function ContactSection({ content }: { content: Record<string, string> }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -58,13 +58,13 @@ export function ContactSection() {
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500/20 to-amber-600/10 border border-amber-500/30 flex items-center justify-center">
                 <Mail className="w-6 h-6 text-amber-400" />
               </div>
-              <span className="text-gray-300">joaquin.sanch@icloud.com</span>
+              <span className="text-gray-300">{content.contact_email}</span>
             </div>
             <div className="flex items-center gap-3 justify-center">
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500/20 to-amber-600/10 border border-amber-500/30 flex items-center justify-center">
                 <Phone className="w-6 h-6 text-amber-400" />
               </div>
-              <span className="text-gray-300">+54 9 342 595-3943</span>
+              <span className="text-gray-300">{content.contact_phone}</span>
             </div>
           </div>
 

@@ -8,6 +8,7 @@ const navLinks = [
   { href: "#inicio", label: "Inicio" },
   { href: "#planes", label: "Planes" },
   { href: "#sobre-mi", label: "Sobre mí" },
+  { href: "/admin/login", label: "Admin" },
 ]
 
 export function Navbar() {

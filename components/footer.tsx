@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Dumbbell, Instagram, Youtube, Music2 } from "lucide-react"
 
-export function Footer() {
+export function Footer({ content }: { content: Record<string, string> }) {
   return (
     <footer className="bg-black border-t border-zinc-900">
       <div className="container mx-auto px-4 md:px-8 py-12">
@@ -46,7 +46,7 @@ export function Footer() {
             <h3 className="font-semibold text-white mb-5 text-sm tracking-wider uppercase">Seguime</h3>
             <div className="flex gap-4">
               <a
-                href="#"
+                href={content.footer_instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-gray-400 hover:text-amber-400 hover:border-amber-500/50 hover:-translate-y-0.5 transition-all duration-300"
@@ -55,7 +55,7 @@ export function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href={content.footer_youtube}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-gray-400 hover:text-amber-400 hover:border-amber-500/50 hover:-translate-y-0.5 transition-all duration-300"
@@ -64,7 +64,7 @@ export function Footer() {
                 <Youtube className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href={content.footer_tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-gray-400 hover:text-amber-400 hover:border-amber-500/50 hover:-translate-y-0.5 transition-all duration-300"
@@ -90,6 +90,7 @@ export function Footer() {
               <Link href="#" className="text-gray-600 hover:text-amber-400 transition-colors text-xs tracking-wider uppercase">
                 Términos de Servicio
               </Link>
+
             </div>
           </div>
         </div>

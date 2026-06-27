@@ -3,35 +3,6 @@
 import { useEffect, useRef, useState } from "react"
 import { Grid3X3, ShieldCheck, Zap, TrendingUp } from "lucide-react"
 
-const stats = [
-  { value: 9, suffix: "+", label: "Años de experiencia" },
-  { value: 500, suffix: "+", label: "Clientes entrenados" },
-  { value: 8, suffix: "", label: "Programas disponibles" },
-]
-
-const valueProps = [
-  {
-    icon: Grid3X3,
-    title: "Estructurado",
-    description: "Cada semana planificada. Sin improvisar. Solo seguir el plan.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Probado",
-    description: "9 años de experiencia condensados en programas que funcionan.",
-  },
-  {
-    icon: Zap,
-    title: "Sin permanencia",
-    description: "Pagas y empezás. Sin esperas, sin llamadas, sin vueltas.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Resultados",
-    description: "Fuerza, resistencia y estética. Todo en un mismo enfoque.",
-  },
-]
-
 function useCountUp(target: number, duration: number, trigger: boolean) {
   const [count, setCount] = useState(0)
 
@@ -87,7 +58,36 @@ function AnimatedStat({ value, suffix, label }: { value: number; suffix: string;
   )
 }
 
-export function StatsBar() {
+export function StatsBar({ content }: { content: Record<string, string> }) {
+  const stats = [
+    { value: 9, suffix: "+", label: content.stats_years },
+    { value: 500, suffix: "+", label: content.stats_clients },
+    { value: 8, suffix: "", label: content.stats_programs },
+  ]
+
+  const valueProps = [
+    {
+      icon: Grid3X3,
+      title: content.vp_1_title,
+      description: content.vp_1_desc,
+    },
+    {
+      icon: ShieldCheck,
+      title: content.vp_2_title,
+      description: content.vp_2_desc,
+    },
+    {
+      icon: Zap,
+      title: content.vp_3_title,
+      description: content.vp_3_desc,
+    },
+    {
+      icon: TrendingUp,
+      title: content.vp_4_title,
+      description: content.vp_4_desc,
+    },
+  ]
+
   return (
     <section className="py-20 md:py-28 bg-zinc-950 border-y border-zinc-900">
       <div className="container mx-auto px-4 md:px-8">
