@@ -3,27 +3,26 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Paleta de colores negro y dorado */
 :root {
-  --background: oklch(0.05 0 0); /* Negro profundo */
-  --foreground: oklch(0.95 0 0); /* Blanco */
-  --card: oklch(0.08 0 0); /* Negro ligeramente más claro */
+  --background: oklch(0.05 0 0);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.08 0 0);
   --card-foreground: oklch(0.95 0 0);
   --popover: oklch(0.08 0 0);
   --popover-foreground: oklch(0.95 0 0);
-  --primary: oklch(0.7 0.15 85); /* Dorado */
+  --primary: oklch(0.7 0.15 85);
   --primary-foreground: oklch(0.05 0 0);
-  --secondary: oklch(0.12 0 0); /* Gris muy oscuro */
+  --secondary: oklch(0.12 0 0);
   --secondary-foreground: oklch(0.95 0 0);
   --muted: oklch(0.12 0 0);
   --muted-foreground: oklch(0.6 0 0);
-  --accent: oklch(0.75 0.18 85); /* Dorado más brillante */
+  --accent: oklch(0.75 0.18 85);
   --accent-foreground: oklch(0.05 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.95 0 0);
-  --border: oklch(0.15 0 0); /* Borde gris oscuro */
+  --border: oklch(0.15 0 0);
   --input: oklch(0.15 0 0);
-  --ring: oklch(0.7 0.15 85); /* Ring dorado */
+  --ring: oklch(0.7 0.15 85);
   --chart-1: oklch(0.7 0.15 85);
   --chart-2: oklch(0.75 0.18 85);
   --chart-3: oklch(0.65 0.12 85);
@@ -112,7 +111,7 @@
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
   --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 }
@@ -129,7 +128,6 @@
   }
 }
 
-/* Added scrollytelling animations */
 @layer utilities {
   .animate-fade-in {
     animation: fadeIn 1s ease-out forwards;
@@ -141,6 +139,11 @@
 
   .animate-scale-in {
     animation: scaleIn 0.6s ease-out forwards;
+  }
+
+  /* Nuevas animaciones */
+  .text-balance {
+    text-wrap: balance;
   }
 }
 
@@ -172,6 +175,25 @@
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes scrollBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 0.4;
+  }
+}
+
+/* Contador animado - tabular-nums para números monoespaciados */
+@supports (font-variant-numeric: tabular-nums) {
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
   }
 }
 

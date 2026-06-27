@@ -1,56 +1,100 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { MessageCircle, ChevronDown } from "lucide-react"
 import Image from "next/image"
+
+const WHATSAPP_LINK = "https://wa.me/5493425953943?text=Hola%20Joaquin!%20Me%20interesan%20tus%20planes%20de%20entrenamiento"
 
 export function HeroSection() {
   return (
     <section
       id="inicio"
-      className="relative min-h-[100svh] flex items-center bg-gradient-to-r from-black via-gray-900 to-black overflow-hidden"
+      className="relative min-h-[100svh] flex items-center overflow-hidden"
     >
-      <div className="container mx-auto px-4 md:px-8 w-full py-20">
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center h-full">
-          {/* Columna izquierda - Texto */}
-          <div className="text-left z-10 flex flex-col justify-center">
-            {/* Subtítulo pequeño */}
-            <p className="text-white/70 font-medium tracking-[0.2em] uppercase mb-6 text-sm md:text-base">
-              Wherever, Whenever
-            </p>
+      {/* Photo background layer */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/joa.png"
+          alt="Joaquin - Entrenador Personal"
+          fill
+          className="object-cover object-center lg:object-[50%_25%]"
+          priority
+          sizes="100vw"
+        />
+        {/* Gradient overlays - 3 layers */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-l from-black/30 via-transparent to-black" />
+      </div>
 
-            {/* Título principal */}
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white mb-8 leading-[0.9] tracking-tight">
-              JOA FIT
-            </h1>
+      <div className="container mx-auto px-4 md:px-8 w-full relative z-10 py-24">
+        <div className="max-w-2xl">
+          {/* Pill badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-300 text-sm font-medium mb-8 animate-fade-in-up">
+            <span className="text-sm">🔥</span>
+            <span>+500 clientes ya entrenan conmigo</span>
+          </div>
 
-            {/* Subtítulo descriptivo */}
-            <p className="text-white/80 text-base md:text-lg mb-10 max-w-md">
-              Asesorías online de entrenamiento y nutrición
-            </p>
+          {/* H1 */}
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white leading-[0.85] tracking-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+            JOA FIT
+          </h1>
 
-            {/* Botón CTA */}
-            <div>
+          {/* Subheadline */}
+          <p className="text-white/80 text-lg md:text-xl max-w-xl mb-10 animate-fade-in-up leading-relaxed" style={{ animationDelay: "0.2s" }}>
+            Asesorías online de entrenamiento y nutrición. Dejá de improvisar en el gym, seguí un plan probado y empezá a ver resultados reales.
+          </p>
+
+          {/* 2 CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-amber-500 to-amber-600 text-black hover:from-amber-400 hover:to-amber-500 text-base px-8 py-6 rounded-full font-bold tracking-wider uppercase shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/30 hover:-translate-y-0.5 transition-all duration-300"
+              onClick={() => document.getElementById("planes")?.scrollIntoView({ behavior: "smooth" })}
+            >
+              Ver Planes
+            </Button>
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-amber-500 to-amber-600 text-black hover:from-amber-400 hover:to-amber-500 text-base md:text-lg px-8 py-6 rounded-full font-semibold"
+                variant="outline"
+                className="w-full sm:w-auto text-base px-8 py-6 rounded-full font-bold tracking-wider uppercase border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 hover:-translate-y-0.5 transition-all duration-300"
               >
-                ¡Quiero Empezar!
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Hablar por WhatsApp
               </Button>
-            </div>
+            </a>
           </div>
 
-          {/* Columna derecha - Imagen */}
-          <div className="relative w-full h-[500px] md:h-[600px] lg:h-[80vh] max-h-[800px]">
-            <Image
-              src="/joa.png"
-              alt="Joaquin - Entrenador Personal"
-              fill
-              className="object-cover object-center"
-              priority
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
+          {/* Trust bar */}
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-white/50 text-sm animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+            <span className="flex items-center gap-1.5">
+              <span className="w-1 h-1 rounded-full bg-amber-400" />
+              Sin permanencia
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-1 h-1 rounded-full bg-amber-400" />
+              Primera consulta gratis
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-1 h-1 rounded-full bg-amber-400" />
+              100% Online
+            </span>
           </div>
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
+        <div className="w-5 h-8 rounded-full border-2 border-white/25 flex items-start justify-center p-1.5">
+          <div className="w-1 h-2 bg-white/50 rounded-full animate-[scrollBounce_2s_ease-in-out_infinite]" />
+        </div>
+        <span className="text-white/30 text-[10px] tracking-[0.2em] uppercase">Descubre mis planes</span>
       </div>
     </section>
   )

@@ -1,0 +1,37 @@
+- Crear sistema de login. Los usuarios van a ser solamente los que 
+pagaron el servicio. - Cuando el usuario hace login, tiene que haber una 
+interfaz similar a la de Harbiz, donde haya un calendario con los dias y 
+fechas y en cada dia la rutina corresponidente. Cada ejercicio de la 
+rutina va a tener un video en donde se explica la técnica. El video va a 
+estar subido a youtube, pero la idea es que se pueda ver desde la 
+plataforma en un videoPlayer embebido en la página.
+- Muy importante usar popUps 
+
+
+HARBIZ
+- Me piden peso, altura, sexo.
+- Tambien me pregunta aunque no se que tan necesario sea por ahora: 
+Hablemos de tu estado de salud
+¿Alguna vez te ha diagnosticado un médico una enfermedad cardíaca, recomendándote que solo hagas actividad física supervisada por personal sanitario?
+Sí No
+¿Sufres dolor en el pecho cuando realizas actividad física?
+Sí No
+¿Has notado dolor en el pecho durante el último mes mientras estabas en reposo?
+Sí No
+¿Has perdido la consciencia o el equilibrio después de notar sensación de mareo?
+Sí No
+¿Tienes alguna alteración ósea o articular que podría agravarse con la actividad física?
+Sí No
+¿Alguna vez te ha recetado el médico algún fármaco para la presión arterial u otro problema cardiocirculatorio?
+Sí No
+¿Tienes conocimiento, por experiencia propia, o debido al consejo de algún médico, de cualquier otra razón física que te impida hacer ejercicio sin supervisión médica?
+Sí No
+
+- Cuando un usuario abre la aplicacion me tiene que aparecer: * Resumen 
+semanal: Distintos graficos donde se muestra Cumplimiento por actividad, 
+Actividad diaria (horas por dia de la semana), Cumplimiento Global y 
+tiempo de actividad en minutos. - Cuando el trainer programa una rutina 
+para el dia de la fecha, al usuario le tiene que aparecer en la página 
+principal la rutina que le corresponde al día de hoy. - Lo importante es 
+que el trainer pueda creare las distintas rutinas y asignarlas a una 
+fecha para el entrenado.
